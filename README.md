@@ -3,9 +3,9 @@
 > Reflection 1 :
 > Clean Code Principles Applied:
 
-1. Meaningful Names: Aku menggunakan nama _variables, methods_ , and _Classes_ yang deskriptif dan berarti (misalnya, ProductController, deleteProduct, productService) untuk memastikan kode tersebut mudah dipahami.
+1. Meaningful Names: Saya menggunakan nama _variables, methods_ , and _Classes_ yang deskriptif dan berarti (misalnya, ProductController, deleteProduct, productService) untuk memastikan kode tersebut mudah dipahami.
 
-2. Small Functions: Aku melakukan upaya untuk menjaga _methods_ agar tetap ringkas, dengan fokus pada satu _responsibility_. Contohnya, createProductPost hanya menangani create produk, sedangkan deleteProduct khusus menangani operasi deletion.
+2. Small Functions: Saya melakukan upaya untuk menjaga _methods_ agar tetap ringkas, dengan fokus pada satu _responsibility_. Contohnya, createProductPost hanya menangani create produk, sedangkan deleteProduct khusus menangani operasi deletion.
 
 3. Refactoring: Sepanjang proses pengembangan, saya terus-menerus merombak kode untuk meningkatkan keterbacaan dan mengurangi kompleksitas dari kode". Ini termasuk menyederhanakan conditional expressions yang dapat digunakan kembali ke dalam metode yang terpisah.
 
