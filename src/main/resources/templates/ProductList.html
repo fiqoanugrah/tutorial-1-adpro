@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Product List</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-
-<div class="container mt-3">
-    <h2>Product List</h2>
-    <a th:href="@{/product/create}" class="btn btn-primary mb-3">Create New Product</a>
-    <table class="table">
-        <thead class="thead-light">
+<div class="container mt-4">
+    <h2>Products</h2>
+    <div>
+        <a th:href="@{/product/create}" class="btn btn-primary">Add Product</a>
+    </div>
+    <table class="table mt-3">
+        <thead>
         <tr>
-            <th>Product ID</th>
-            <th>Product Name</th>
+            <th>ID</th>
+            <th>Name</th>
             <th>Quantity</th>
-            <th>Action</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -25,14 +26,14 @@
             <td th:text="${product.productName}"></td>
             <td th:text="${product.productQuantity}"></td>
             <td>
-                <a th:href="@{/product/edit/{id}(id=${product.productid})}" class="btn btn-success">Edit</a>
-                <!-- Delete functionality will be implemented in a different branch -->
+                <a th:href="@{/product/edit/{id}(id=${product.productid})}" class="btn btn-info">Edit</a>
+                <form th:action="@{/product/delete/{id}(id=${product.productid})}" method="post" style="display:inline-block;">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
