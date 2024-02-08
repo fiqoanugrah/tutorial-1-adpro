@@ -1,14 +1,13 @@
 package id.ac.ui.cs.advprog.eshop.service;
 
-
 import id.ac.ui.cs.advprog.eshop.model.Product;
 import id.ac.ui.cs.advprog.eshop.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -17,16 +16,24 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public Product create(Product product) {
-        productRepository.create(product);
-        return product;
+    public Product createOrUpdate(Product product) {
+        return productRepository.createOrUpdate(product);
+    }
+
+    @Override
+    public Optional<Product> findById(String id) {
+        return productRepository.findById(id);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        productRepository.deleteById(id);
     }
 
     @Override
     public List<Product> findAll() {
-        Iterator<Product> productIterator = productRepository.findAll();
-        List<Product> allProduct = new ArrayList<>();
-        productIterator.forEachRemaining(allProduct::add);
-        return allProduct;
+        List<Product> allProducts = new ArrayList<>();
+        productRepository.findAll().forEachRemaining(allProducts::add);
+        return allProducts;
     }
 }
