@@ -23,3 +23,4 @@
 
 > Improvement Areas:
 
+Kesalahan dalam kode awal adalah menggunakan @GetMapping untuk operasi delete. Untuk memperbaiki, saya ganti dengan @PostMapping pada metode delete di ProductController, sehingga lebih sesuai dengan praktik RESTful dan meningkatkan keamanan.
